@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculator</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="calculator.css">
   <script src="../node_modules/jquery/dist/jquery.js"></script>
   <script src="../node_modules/react/dist/react.js"></script>
   <script src="../node_modules/react-dom/dist/react-dom.js"></script>
   <script src="../node_modules/lodash/lodash.js"></script>
-  <script src="../client/app.js"></script>
 </head>
 <body>
   <header> <h1> Calculator </h1> </header>
@@ -17,8 +17,8 @@
   <div class="background xycord">
     <!-- gotta float right -->
     <div class="calculatorBox"> 
+      <button>minimize</button>
       <div class='resultWindow'>
-
       </div>
       <form>
         <input type='text' class='calcInput'/>
@@ -50,6 +50,13 @@
         </div>
       </div>
     </div>
+    <div class="dataGrid">
+      <button>minimize</button>
+      <div class="imgContainer">
+      <img src="http://www.viblend.com/Questions/Silverlight/images/dataGridHierarchy.png"/>
+      </div>
+    </div>
   </div>
+  <script src="../compiled/client/app.js"></script>
 </body>
 </html>

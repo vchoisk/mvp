@@ -1,6 +1,5 @@
-console.log('reading the script');
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
@@ -10,5 +9,5 @@ class App extends React.Component {
     );
   }
 }
-
-ReactDOM.render(< App />, document.getElementById('app'));
+console.log('this is it ', document.body);
+ReactDOM.render(<App />, document.getElementById('app'));
