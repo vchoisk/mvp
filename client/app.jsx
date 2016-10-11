@@ -11,3 +11,5 @@ class App extends React.Component {
 }
 console.log('this is it ', document.body);
 ReactDOM.render(<App />, document.getElementById('app'));
+
+window.App = App;
