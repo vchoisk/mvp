@@ -8,19 +8,13 @@ class Background extends React.Component {
     } 
   }
   render(){
-    var dataPoints = this.state.dataPoints.map(function(tuple){
-      var pointStyle = {
-        color:'blue',
-        position:'absolute',
-        top:window.innerHeight/2-tuple[1],
-        left:window.innerWidth/2-tuple[0]
-      }
-      return <div className='dataPoint' style={pointStyle}>here!</div>
+    var dataPointComp = this.state.dataPoints.map(function(tuple){
+      return <DataPoint className='dataPoint' position={tuple} />
     })
     return (
       <div>
         <DataGrid dataPoints={this.state.dataPoints}/>
-        {dataPoints}
+        {dataPointComp}
       </div>
     );
   }

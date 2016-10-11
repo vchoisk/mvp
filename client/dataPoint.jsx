@@ -1,12 +1,12 @@
 var DataPoint = (props) => {
 
-  return (
-    <tr>
-      <td>{props.cord[0]}</td> 
-      <td>{props.cord[1]}</td>
-      <td><button>X</button></td>
-    </tr>
-  )
+  var style = {
+    color:'blue',
+    position:'absolute',
+    top:window.innerHeight/2-props.position[1],
+    left:window.innerWidth/2-props.position[0]
+  }
+  return (<div style={style}>here</div>) 
 }
 
 window.DataPoint = DataPoint;
