@@ -5,7 +5,7 @@ class App extends React.Component {
 
   render(){
     return (
-      <p>This is where the react all begins</p>
+      <Background />
     );
   }
 }
