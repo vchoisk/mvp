@@ -7,11 +7,10 @@ class Background extends React.Component {
       dataPoints = []
     } 
   }
-  //MAJOR PROBLEM HERE
-  //how do I get access to data in state?
   render(){
     return (
-      <p>This is where the react all begins</p>
+      <div>
+      </div>
     );
   }
 }
