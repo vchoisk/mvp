@@ -28,6 +28,7 @@ class Background extends React.Component {
     })
     return (
       <div>
+        <CalculatorBox />
         <DataGrid dataPoints={this.state.dataPoints} handleSubmit={this.handleSubmit.bind(this)}/>
         {dataPointComp}
       </div>
