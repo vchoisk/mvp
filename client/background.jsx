@@ -5,10 +5,24 @@ class Background extends React.Component {
     super(props);
     this.state = {
       dataPoints:
-        [[0,0],
-         [10,10],
-         [50,50]] 
+        [] 
     };
+    this.getDataFromServer();
+  }
+
+  getDataFromServer (){
+    var path = '/data/initial';
+    this.serverRequest = $.get(path, function(result){
+      console.dir(result);
+      var curResult = JSON.parse(result).map(function(tuple){
+        return tuple.map(function(stringVer){
+          return parseInt(stringVer);
+        })
+      });
+      this.setState({
+        dataPoints:curResult
+      })
+    }.bind(this));
   }
 
   handleSubmit (event) {
@@ -17,7 +31,9 @@ class Background extends React.Component {
     if(Number.isInteger(xVal) && Number.isInteger(yVal)) {
       this.setState({
         dataPoints : this.state.dataPoints.concat([[xVal, yVal]])
-      });
+      }, function(){ 
+        this.serverRequest=$.post('/data/addData', {array:this.state.dataPoints});
+      }.bind(this));
     }
     document.getElementById("xInput").value = '';
     document.getElementById("yInput").value = '';
@@ -33,6 +49,7 @@ class Background extends React.Component {
     });
     // console.log('after: ', newArr);
   }
+  
 
   render(){
     var counter=0;
