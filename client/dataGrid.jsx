@@ -59,11 +59,13 @@ class DataGrid extends React.Component {
             <td>Delete</td>
           </tr>
           {dataDom}
+          <tr>
+          <td><input type='text' id='xInput' /></td>
+          <td><input type='text' id='yInput' /></td>
+          <td><button onClick={this.handleTwoFunction.bind(this)}>Submit</button></td>
+          </tr>
          </tbody>
         </table>
-          <input type='text' id='xInput' />
-          <input type='text' id='yInput' />
-          <button onClick={this.handleTwoFunction.bind(this)}>Submit</button>
       </div>
     )
   }
