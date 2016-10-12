@@ -6,61 +6,69 @@
   <title>Calculator</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="calculator.css">
-  <script src="../node_modules/jquery/dist/jquery.js"></script>
-  <script src="../node_modules/react/dist/react.js"></script>
-  <script src="../node_modules/react-dom/dist/react-dom.js"></script>
-  <script src="../node_modules/lodash/lodash.js"></script>
+  <link rel="stylesheet" href="../node_modules/js-calculator/css/calculator.css">
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/react/dist/react.js"></script>
+  <script src="node_modules/react-dom/dist/react-dom.js"></script>
+  <script src="node_modules/lodash/lodash.js"></script>
 </head>
 <body>
   <header> <h1> Calculator </h1> </header>
   <div id="app"></div>
   <div class="background xycord">
     <!-- gotta float right -->
-    <div class="calculatorBox"> 
-      <button>minimize</button>
-      <div class='resultWindow'>
+    <div class="wrapper-calc">
+      <div class="wrapper-calc__row">
+          <input type="text" value="0" readonly>
       </div>
-      <form>
-        <input type='text' class='calcInput'/>
-      </form>
-      <div class='keyPad'>
-        <div class='keyRow'>
-          <button> 1 </button>
-          <button> 2 </button>
-          <button> 3 </button>
-          <button> + </button>
-        </div>
-        <div class='keyRow'>
-          <button> 4 </button>
-          <button> 5 </button>
-          <button> 6 </button>
-          <button> - </button>
-        </div>
-        <div class='keyRow'>
-          <button> 7 </button>
-          <button> 8 </button>
-          <button> 9 </button>
-          <button> * </button>
-        </div>
-        <div class='keyRow'>
-          <button> clear </button>
-          <button> 0 </button>
-          <button> enter </button>
-          <button> / </button>
-        </div>
+      <div class="wrapper-calc__left">
+          <div class="wrapper-calc__row">
+              <button>7</button>
+              <button>8</button>
+              <button>9</button>
+              <button> </button>
+          </div>
+          <div class="wrapper-calc__row">
+              <button>4</button>
+              <button>5</button>
+              <button>6</button>
+              <button>x</button>
+          </div>
+          <div class="wrapper-calc__row">
+              <button>3</button>
+              <button>2</button>
+              <button>1</button>
+              <button>-</button>
+          </div>
+          <div class="wrapper-calc__row">
+              <button>0</button>
+              <button>.</button>
+              <button>+</button>
+              <button>C</button>
+          </div>
       </div>
-    </div>
-    <div class="dataGrid">
-      <button>minimize</button>
-<!--       <div class="imgContainer">
-      <img src="http://www.viblend.com/Questions/Silverlight/images/dataGridHierarchy.png"/>
-      </div> -->
+      <div class="wrapper-calc__left">
+          <div class="wrapper-calc__row">
+              <button>←</button>
+          </div>
+          <div class="wrapper-calc__row">
+              <button>=</button>
+          </div>
+      </div>
     </div>
   </div>
-  <script src="../compiled/client/dataPoint.js"></script>
-  <script src="../compiled/client/dataCell.js"></script>
-  <script src="../compiled/client/dataGrid.js"></script>
-  <script src="../compiled/client/background.js"></script>
-  <script src="../compiled/client/app.js"></script>
+  <div id="hline"></div>
+  <div id="vline"></div>
+  <script src="node_modules/js-calculator/js/app.js"></script>
+  <script src="compiled/client/dataPoint.js"></script>
+  <script src="compiled/client/dataCell.js"></script>
+  <script src="compiled/client/dataGrid.js"></script>
+  <script src="compiled/client/background.js"></script>
+  <script src="compiled/client/app.js"></script>
+  <script>
+    window.onload = function () {
+        calc.init();
+    };
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@ var DataCell = (props) => {
     <tr>
       <td>{props.cord[0]}</td> 
       <td>{props.cord[1]}</td>
-      <td><button>X</button></td>
+      <td><button key={props.key} onClick={props.handleDelete}>X</button></td>
     </tr>
   )
 }

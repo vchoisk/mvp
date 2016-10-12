@@ -14,9 +14,11 @@ class CalculatorBox extends React.Component {
   }
 
   handleButtonClicks (event) {
-
+    console.log('handle button click');
   }
-    
+  handleEnter (event) {
+    console.log('handle enter');
+  } 
   render(){
     var dataPointComp = this.state.dataPoints.map(function(tuple){
       return <DataPoint className='dataPoint' position={tuple}/>
@@ -24,7 +26,7 @@ class CalculatorBox extends React.Component {
     return (
       <div>
         <DisplayWindow records={this.state.calculatorRecords}/>
-        <InputBox buttonClick={this.handleButtonClicks.bind(this)} currentCalc={this.state.currentCalc}/>
+        <InputBox buttonClick={this.handleButtonClicks.bind(this)} handleEnter={this.handleEnter} currentCalc={this.state.currentCalc}/>
       </div>
     );
   }

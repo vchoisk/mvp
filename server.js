@@ -6,10 +6,10 @@ var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-
-app.use(express.static('public'));
-app.use(express.static('compiled'));
-app.use(express.static('node_modules'));
+console.log(__dirname);
+app.use(express.static(__dirname + '/public'));
+app.use('/compiled', express.static(__dirname + '/compiled'));
+app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 // app.get('/*',function(req,res){
 //   console.log('req: ', req.url);

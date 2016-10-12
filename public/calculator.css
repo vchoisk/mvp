@@ -1,9 +1,25 @@
 body {
   /*background-image: url("http://3.bp.blogspot.com/_wvO1ztERT3c/S8Kv1pIgtKI/AAAAAAAAAJQ/PYYjrENN-0o/s1600/graph2.jpg");*/
+  background-color: #fff;
 }
 .calculatorBox {
-  float:right;
+  float: right;
+  bottom: 3px;
 }
 .dataGrid {
   float:left;
+}
+#hline, #vline {
+  border-style: solid;
+  border-width: 1px;
+  border-color:black;
+  position: fixed;
+}
+#vline {
+  left:50vw;
+  height: 100vh;
+}
+#hline {
+  top:50vh;
+  width:100vw;
 }

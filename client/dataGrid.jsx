@@ -2,10 +2,7 @@ class DataGrid extends React.Component {
   
   constructor(props){
     super(props);
-    this.state = {
-      dataDom : []
-    }
-    this.updateTuple();
+
   }
   // //this function should be envoked when user's cursor leaves 'x' input box
   // //passed onto the children components(one cell of the grid)
@@ -25,17 +22,19 @@ class DataGrid extends React.Component {
   //   this.props.dataPoints.push([]);
   // }
   updateTuple (event){
-    console.log('this in update',this);
+    // console.log('this in update',this);
+    var context = this;
     var counter = 0;
-    this.state.dataDom = this.props.dataPoints.filter(function(tuple){
+    return context.props.dataPoints.filter(function(tuple){
       return Number.isInteger(tuple[0]);
     }).filter(function(tuple){
       return Number.isInteger(tuple[1]);
     }).map(function(tuple){
       counter++;
-      return <DataCell cord={tuple} key={counter}/>
-    });
+      return <DataCell cord={tuple} key={counter} handleDelete={context.props.handleDelete}/>
+    })
   }
+
   handleTwoFunction(event){
     this.props.handleSubmit();
     // this.updateTuple();
@@ -47,15 +46,18 @@ class DataGrid extends React.Component {
   //each tuple is a row with two cells, x value and y value
   //first row is a label, x and y
   render(){
+    var dataDom = this.updateTuple();
     return (
       <div className='dataTable'>
         <table>
+         <tbody>
           <tr>
             <td>X cord</td>
             <td>Y cord</td>
             <td>Delete</td>
           </tr>
-          {this.state.dataDom}
+          {dataDom}
+         </tbody>
         </table>
           <input type='text' id='xInput' />
           <input type='text' id='yInput' />

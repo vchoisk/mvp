@@ -1,6 +1,13 @@
-class InputBox extends React.Component{
+// class InputBox extends React.Component{
   
-  constructor(){
-  
-  }
-}
+//   constructor(props){
+//     super(props);
+//   }
+
+//   render(){
+    
+//     return(
+
+//     );
+//   }
+// }

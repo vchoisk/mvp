@@ -22,14 +22,23 @@ class Background extends React.Component {
     document.getElementById("xInput").value = '';
     document.getElementById("yInput").value = '';
   }
+
+  handleDelete (event) {
+    console.log(event);
+    this.setState({
+      dataPoints:this.state.dataPoints.splice(event.value-1,1)
+    });
+  }
+
   render(){
+    var counter=0;
     var dataPointComp = this.state.dataPoints.map(function(tuple){
-      return <DataPoint className='dataPoint' position={tuple}/>
+      counter++;
+      return <DataPoint className='dataPoint' position={tuple} key={counter}/>
     })
     return (
       <div>
-        <CalculatorBox />
-        <DataGrid dataPoints={this.state.dataPoints} handleSubmit={this.handleSubmit.bind(this)}/>
+        <DataGrid dataPoints={this.state.dataPoints} handleSubmit={this.handleSubmit.bind(this)} handleDelete={this.handleDelete.bind(this)}/>
         {dataPointComp}
       </div>
     );
