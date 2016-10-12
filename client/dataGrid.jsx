@@ -51,7 +51,7 @@ class DataGrid extends React.Component {
     var dataDom = this.updateTuple();
     return (
       <div className='dataTable'>
-        <table>
+        <table className='table'>
          <tbody>
           <tr>
             <td>X coordinate</td>

@@ -9,6 +9,11 @@ body {
 .dataGrid {
   float:left;
 }
+.table {
+  width:30%;
+  max-width: 40%;
+  text-align: center;
+}
 #hline, #vline {
   border-style: solid;
   border-width: 1px;
