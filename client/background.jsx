@@ -23,11 +23,15 @@ class Background extends React.Component {
     document.getElementById("yInput").value = '';
   }
 
-  handleDelete (event) {
-    console.log(event);
+  handleDelete (i) {
+    // console.log(i);
+    var newArr=this.state.dataPoints;
+    // console.log('before: ', newArr);
+    newArr.splice(i-1,1);
     this.setState({
-      dataPoints:this.state.dataPoints.splice(event.value-1,1)
+      dataPoints : newArr
     });
+    // console.log('after: ', newArr);
   }
 
   render(){

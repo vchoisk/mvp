@@ -1,4 +1,4 @@
-var data = [];
+// var data = [];
 class DataGrid extends React.Component {
   
   constructor(props){
@@ -32,15 +32,15 @@ class DataGrid extends React.Component {
       return Number.isInteger(tuple[1]);
     }).map(function(tuple){
       counter++;
-      return <DataCell cord={tuple} key={counter} handleDelete={context.props.handleDelete}/>
+      return <DataCell cord={tuple} key={counter} handleDelete={context.props.handleDelete.bind(null, counter)}/>
     })
   }
 
   handleTwoFunction(event){
-    //Maybe? this will allow D3 to get the data in the file
-    setTimeout(0,this.updateTuple.bind(this));
     this.props.handleSubmit();
-    data = this.props.dataPoints;
+    this.updateTuple();
+    //Maybe? this will allow D3 to get the data in the file
+    // data = this.props.dataPoints;
     
   }
 
@@ -68,5 +68,5 @@ class DataGrid extends React.Component {
     )
   }
 }
-window.data = data;
+// window.data = data;
 window.DataGrid = DataGrid;
