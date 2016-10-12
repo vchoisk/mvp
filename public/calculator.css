@@ -13,18 +13,87 @@ body {
   width:30%;
   max-width: 40%;
   text-align: center;
+  background-color:skyblue; 
+  opacity: 0.85;
+  border-style: solid;
+  border-width: 4px;
+  border-color:grey;
 }
-#hline, #vline {
+.wrapper-calc{
+  padding:10px;
+  border-style: solid;
+  border-width: 4px;
+  border-color:grey;
+}
+
+
+
+
+.hlineMajor, .vlineMajor {
   border-style: solid;
   border-width: 1px;
   border-color:black;
   position: fixed;
 }
-#vline {
+.hlineMinor, .vlineMinor {
+  border-style: solid;
+  border-width: 0.3px;
+  border-color:grey;
+  position: fixed;
+}
+.vlineMajor {
   left:50vw;
   height: 100vh;
 }
-#hline {
+.hlineMajor {
   top:50vh;
+  width:100vw;
+}
+#vline1 {
+  left:calc(50vw - 400px);
+  height: 100vh;
+}
+#vline2 {
+  left:calc(50vw + 200px);
+  height: 100vh;
+}
+#vline3 {
+  left:calc(50vw + 400px);
+  height: 100vh;
+}
+#vline4 {
+  left:calc(50vw - 200px);
+  height: 100vh;
+}
+#vline5 {
+  left:calc(50vw + 600px);
+  height: 100vh;
+}
+#vline6 {
+  left:calc(50vw - 600px);
+  height: 100vh;
+}
+#vline7 {
+  left:calc(50vw + 800px);
+  height: 100vh;
+}
+#vline8 {
+  left:calc(50vw - 800px);
+  height: 100vh;
+}
+#hline1 {
+  top:calc(50vh - 200px);
+  width:100vw;
+}
+#hline2 {
+  top:calc(50vh - 400px);
+  width:100vw;
+}
+#hline3 {
+  top:calc(50vh + 200px);
+  width:100vw;
+}
+#hline4 {
+  top:calc(50vh + 400px);
   width:100vw;
 }
