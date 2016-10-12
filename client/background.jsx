@@ -32,7 +32,7 @@ class Background extends React.Component {
       this.setState({
         dataPoints : this.state.dataPoints.concat([[xVal, yVal]])
       }, function(){ 
-        this.serverRequest=$.post('/data/addData', {array:this.state.dataPoints});
+        this.serverRequest=$.post('/data/updateData', {array:this.state.dataPoints});
       }.bind(this));
     }
     document.getElementById("xInput").value = '';
@@ -46,7 +46,9 @@ class Background extends React.Component {
     newArr.splice(i-1,1);
     this.setState({
       dataPoints : newArr
-    });
+    }, function(){ 
+        this.serverRequest=$.post('/data/updateData', {array:this.state.dataPoints});
+      }.bind(this));
     // console.log('after: ', newArr);
   }
   

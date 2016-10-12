@@ -13,7 +13,7 @@ app.use('/compiled', express.static(__dirname + '/compiled'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 app.get('/data/initial', reqHandlers.getAllDataHandler);
-app.post('/data/addData', reqHandlers.postNewData);
+app.post('/data/updateData', reqHandlers.postNewData);
 
 app.listen(port);
 
