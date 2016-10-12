@@ -1,3 +1,4 @@
+var data = [];
 class DataGrid extends React.Component {
   
   constructor(props){
@@ -36,9 +37,10 @@ class DataGrid extends React.Component {
   }
 
   handleTwoFunction(event){
-    this.props.handleSubmit();
-    // this.updateTuple();
+    //Maybe? this will allow D3 to get the data in the file
     setTimeout(0,this.updateTuple.bind(this));
+    this.props.handleSubmit();
+    data = this.props.dataPoints;
     
   }
 
@@ -52,8 +54,8 @@ class DataGrid extends React.Component {
         <table>
          <tbody>
           <tr>
-            <td>X cord</td>
-            <td>Y cord</td>
+            <td>X coordinate</td>
+            <td>Y coordinate</td>
             <td>Delete</td>
           </tr>
           {dataDom}
@@ -66,5 +68,5 @@ class DataGrid extends React.Component {
     )
   }
 }
-
+window.data = data;
 window.DataGrid = DataGrid;
